@@ -1,0 +1,39 @@
+Dans la partie précédente, nous avons vu que certains mots étaient réservés par Python pour définir certaines actions.
+
+Si vous essayez de définir une variable qui a le même nom que l'un de ces mots réservés, vous aurez une erreur de syntaxe.
+
+Voici donc la liste des mots réservés par Python qu'il vaut mieux éviter de déranger ;)
+
+False
+None
+True
+and
+as
+assert
+break
+class
+continue
+def
+del
+elif
+else
+except
+finally
+for
+from
+global
+if
+import
+in
+is
+lambda
+non local
+not
+or
+pass
+raise
+return
+try
+while
+with
+yield

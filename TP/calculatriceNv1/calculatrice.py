@@ -1,4 +1,4 @@
-
+# Calculatrice simple
 premierNombre = input(" Veuillez entrer un premier nombre : ")
 deuxiemeNombre = input(" Veuillez entrer un deuxième nombre : ")
 operateur = input(" Veuillez entrer un opérateur : ")
