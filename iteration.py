@@ -63,6 +63,6 @@ print(liste_nb_positifs)
 # Les fonctions any() et all() permettent de vérifier si au moins un élément d'une liste est vrai ou si tous les éléments d'une liste sont vrais.
 
 
-liste = [ 0, 1, 2, 3, 4 ]
-print(any(liste)) # True
-print(all(liste)) # False
+notes = [ 10, 12, 15, 8, 14 ]
+print(all([ note >= 10 for note in notes ]))
+print(any([ note >= 10 for note in notes ]))

@@ -1,18 +1,28 @@
-# Calculatrice simple
-premierNombre = input(" Veuillez entrer un premier nombre : ")
-deuxiemeNombre = input(" Veuillez entrer un deuxième nombre : ")
-operateur = input(" Veuillez entrer un opérateur : ")
+# On déclare deux variables
+a = b = ""
 
-if operateur == "+":
-    resultat = int(premierNombre) + int(deuxiemeNombre)
-elif operateur == "-":
-    resultat = int(premierNombre) - int(deuxiemeNombre)
-elif operateur == "*":
-    resultat = int(premierNombre) * int(deuxiemeNombre)
-elif operateur == "/":
-    resultat = int(premierNombre) / int(deuxiemeNombre)
-else:
-    resultat = "Erreur"
+# Tant que a et b ne sont pas des nombres, on boucle
+while not (a.isdigit() and b.isdigit()):
+    
+    # On demande deux nombres à l'utilisateur
+    a = input("Entrez un premier nombre : ")
+    b = input("Entrez un deuxième nombre : ")
+    
+    # On affiche une phrase si les nombres entrés ne sont pas valides.
+    if not (a.isdigit() and b.isdigit()):
+        print("Veuillez entrer deux nombres valides")
+
+# On affiche le résultat de l'addition
+print(f"Le résultat de l'addition de {a} avec {b} est égal à {int(a) + int(b)}")
 
 
-print("Le résultat est : ", resultat)
+
+
+
+
+
+
+
+
+
+
