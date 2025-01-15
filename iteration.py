@@ -24,3 +24,12 @@ continuer = "o"
 while continuer == "o":
     print("on continue...")
     continuer = input("voulez vous continuer ? o/n : ")
+
+
+# break et continue
+
+liste = [ "1", "2", "3", "4", "Paul", "6", "Pierre" ]
+for element in liste:
+    if element.isalpha():
+        break
+    print(element)
