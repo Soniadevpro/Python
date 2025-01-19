@@ -1,4 +1,8 @@
 # for in 
+import requests
+if __name__ == "__main__":
+    result = requests.get("https://www.google.com")
+    print(result.content)
 
 for i in [ 88, 1, 8, 5, 14 ]:
     print(i)
@@ -66,3 +70,12 @@ print(liste_nb_positifs)
 notes = [ 10, 12, 15, 8, 14 ]
 print(all([ note >= 10 for note in notes ]))
 print(any([ note >= 10 for note in notes ]))
+
+
+a = 35
+b = 25
+
+def addition(a, b):
+    return a + b
+
+print(addition(a, b))
