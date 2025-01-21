@@ -1,38 +1,31 @@
 import random
-
-# Initialisation des listes
-
 temp = []
 liste_valeurs_positives = []
 liste_valeurs_negatives = []
 liste_valeurs_normales = []
 
-# Génération et tri de 100 températures aléatoires
 for i in range(100):
-    temp.append(random.randint(-10, 41))
+    temp.append(random.randint(-10,41))
 
 temp.sort()
 
-# Classification des températures en listes distinctes
 for i in temp:
-    if i < 0:
+    if(i<0):
         liste_valeurs_negatives.append(i)
-    elif 0 <= i < 20:
+    elif(0 <= i < 20):
         liste_valeurs_normales.append(i)
     else:
         liste_valeurs_positives.append(i)
 
-# Alerte basée sur les valeurs des listes
-if len(liste_valeurs_negatives) > 2:
+if(len(liste_valeurs_negatives) > 2):
     print("Alerte : Attention ca caille")
-elif len(liste_valeurs_positives) > 4:
-    print("Alerte : Attention met de la crème")
 
-# Extraction des températures minimale et maximale
+if(len(liste_valeurs_positives) > 4):
+    print("Alerte : Attention met de la crème")    
+
 temp_min = temp[0]
-temp_max = liste_valeurs_positives[-1] if liste_valeurs_positives else temp[-1]
+temp_max = liste_valeurs_positives[-1]
 
-# Affichage des résultats
 print(f"Temperature maximale : {temp_max}°")
 print(f"Temperature minimale : {temp_min}°")
 print("--------------------------------------------------------")        
@@ -40,29 +33,72 @@ print(f"Valeur de la liste positive : {liste_valeurs_positives}")
 print(f"Valeur de la liste négative : {liste_valeurs_negatives}")
 print(f"Valeur de la liste normale : {liste_valeurs_normales}")
 
-# Tri des listes de valeurs positives et négatives
-liste_valeurs_positives.sort()
-liste_valeurs_negatives.sort()
 
-print(f"Valeurs positives triées : {liste_valeurs_positives}")
-print(f"Valeurs négatives triées : {liste_valeurs_negatives}")
+# fonction creation liste
+def create_liste_temp():
+    temp = []
+    for i in range(100):
+        temp.append(random.randint(-10,41))
+    return temp
+# fonction tri liste
+def sort_liste_temp(temp):
+    temp.sort()
+    return temp
+# fonction tri des valeurs
+def get_liste_valeurs(temp):
+    liste_valeurs_positives = []
+    liste_valeurs_negatives = []
+    liste_valeurs_normales = []
 
-# Calcul de la somme et de la moyenne des valeurs positives et négatives
-somme_valeurs_positives = sum(liste_valeurs_positives)
-somme_valeurs_negatives = sum(liste_valeurs_negatives)
+    for i in temp:
+        if(i<0):
+            liste_valeurs_negatives.append(i)
+        elif(0 <= i < 20):
+            liste_valeurs_normales.append(i)
+        else:
+            liste_valeurs_positives.append(i)
+    return liste_valeurs_positives, liste_valeurs_negatives, liste_valeurs_normales
 
-print(f"La somme des valeurs positives est de : {somme_valeurs_positives}")
-print(f"La somme des valeurs négatives est de : {somme_valeurs_negatives}")
 
-moyenne_valeurs_positives = somme_valeurs_positives / len(liste_valeurs_positives) if liste_valeurs_positives else 0
-moyenne_valeurs_negatives = somme_valeurs_negatives / len(liste_valeurs_negatives) if liste_valeurs_negatives else 0
+# fonction alerte valeur chaud froid
 
-print(f"La moyenne des valeurs positives est de : {moyenne_valeurs_positives}")
-print(f"La moyenne des valeurs négatives est de : {moyenne_valeurs_negatives}")
+def alerte(liste_valeurs_positives, liste_valeurs_negatives):
+    if(len(liste_valeurs_negatives) > 2):
+        print("Alerte : Attention ca caille")
 
-# Fonction pour générer une liste de 100 valeurs aléatoires entre -10 et 41
-def create_liste():
-    liste = [random.randint(-10, 41) for _ in range(100)]
-    return liste
+    if(len(liste_valeurs_positives) > 4):
+        print("Alerte : Attention met de la crème")
 
-print(create_liste())
+
+# fonction valeur min et max
+
+def get_temp_min(temp):
+    return temp[0]
+
+def get_temp_max(liste_valeurs_positives):
+    return liste_valeurs_positives[-1]
+
+
+# Programme principal
+
+temp = create_liste_temp()
+
+temp = sort_liste_temp(temp)
+
+liste_valeurs_positives, liste_valeurs_negatives, liste_valeurs_normales = get_liste_valeurs(temp)
+
+alerte(liste_valeurs_positives, liste_valeurs_negatives)
+
+temp_min = get_temp_min(temp)
+temp_max = get_temp_max(liste_valeurs_positives)
+
+print(f"Temperature maximale : {temp_max}°")
+print(f"Temperature minimale : {temp_min}°")
+print("--------------------------------------------------------")
+print(f"Valeur de la liste positive : {liste_valeurs_positives}")
+print(f"Valeur de la liste négative : {liste_valeurs_negatives}")
+print(f"Valeur de la liste normale : {liste_valeurs_normales}")
+
+
+
+
