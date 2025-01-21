@@ -374,3 +374,9 @@ else:
 # Arrêtez une fois que le nombre est trouvé.
 # Entrée : 50 (tentative utilisateur), 75 (tentative utilisateur), 70 (tentative utilisateur)
 # Sortie : Félicitations, vous avez trouvé le nombre : 70
+
+
+
+
+
+
