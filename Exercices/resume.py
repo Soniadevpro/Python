@@ -40,9 +40,13 @@ def create_liste_temp():
     for i in range(100):
         temp.append(random.randint(-10,41))
     return temp
+
+help(create_liste_temp)
 # fonction tri liste
 def sort_liste_temp(temp):
     temp.sort()
+
+    help(sort_liste_temp)
     return temp
 # fonction tri des valeurs
 def get_liste_valeurs(temp):
@@ -58,7 +62,7 @@ def get_liste_valeurs(temp):
         else:
             liste_valeurs_positives.append(i)
     return liste_valeurs_positives, liste_valeurs_negatives, liste_valeurs_normales
-
+help(get_liste_valeurs)
 
 # fonction alerte valeur chaud froid
 
@@ -68,7 +72,7 @@ def alerte(liste_valeurs_positives, liste_valeurs_negatives):
 
     if(len(liste_valeurs_positives) > 4):
         print("Alerte : Attention met de la crème")
-
+help(alerte)
 
 # fonction valeur min et max
 
@@ -100,5 +104,11 @@ print(f"Valeur de la liste négative : {liste_valeurs_negatives}")
 print(f"Valeur de la liste normale : {liste_valeurs_normales}")
 
 
+
+
+# fonction helper pour les fonctions précédentes
+
+
+    
 
 
