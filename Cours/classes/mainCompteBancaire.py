@@ -1,4 +1,4 @@
-import CompteBancaire as compte
+import Cours.classes.CompteBancaire as compte
 
 # Création d'une instance avec l'alias
 c = compte.CompteBancaire()

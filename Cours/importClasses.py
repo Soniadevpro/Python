@@ -1,6 +1,6 @@
 # appel du module
 
-import Personne as pers
+import Cours.classes.Personne as pers
 
 p = pers.Personne() # instancier l'objet
 print(p)
