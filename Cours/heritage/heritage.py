@@ -29,3 +29,30 @@ test2 = Alphabet_minuscule ()
 print(test2.lettres_min)
 
 print(test2.lettres_maj)
+
+
+class Alphabet_tri(Alphabet_minuscule):
+    # classe petite fille
+    def __init__(self):
+        Alphabet_minuscule.__init__(self)
+        self.voyelles = []
+        self.consonnes = []
+        for lettre in self.lettres:
+            if lettre in "aeiouy":
+                self.voyelles.append(lettre)
+            else:
+                self.consonnes.append(lettre)
+    
+    def listes_vers_chaine(self):
+        self.voyelles_chaine = "".join(self.voyelles) 
+        self.consonnes_chaine = "".join(self.consonnes)
+
+test3 = Alphabet_tri()
+print(test3.lettres) 
+print(test3.voyelles)
+print(test3.consonnes)
+
+test3.listes_vers_chaine()
+print(test3.voyelles_chaine)
+test3.consonnes_chaine()
+print(test3.consonnes_chaine)
